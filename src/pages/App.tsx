@@ -1,8 +1,6 @@
-import React from 'react';
-import '../App.css';
-import {Route, Routes} from 'react-router-dom';
-import {ThemeProvider, createTheme} from '@mui/material/styles';
-import CssBaseline from "@mui/material/CssBaseline";
+import { Route, Routes } from 'react-router-dom';
+// import { ThemeProvider, createTheme } from '@mui/material/styles';
+// import CssBaseline from "@mui/material/CssBaseline";
 import Home from "./Home/Home";
 import Product from "./Product/Product";
 
@@ -26,24 +24,25 @@ import Product from "./Product/Product";
 //Axios
 //Material UI
 //Tailwind CSS is also available if you want to use it
+//Lodash
 
 
 function App() {
     return (
-        <ThemeProvider theme={
-            createTheme({
-                palette: {
-                    mode: 'dark',
-                },
-            })
-        }
-        >
-            <CssBaseline/>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/product/:id" element={<Product/>}/>
-            </Routes>
-        </ThemeProvider>
+        // <ThemeProvider theme={
+        //     createTheme({
+        //         palette: {
+        //             mode: 'dark',
+        //         },
+        //     })
+        // }
+        // >
+        //     <CssBaseline />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<Product />} />
+        </Routes>
+        // </ThemeProvider>
 
     );
 }
