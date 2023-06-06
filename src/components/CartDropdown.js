@@ -2,9 +2,11 @@ import { useContext } from 'react';
 import Button from './Button';
 import { CartContext } from '../contexts/cartContext';
 import CartItem from './CartItem';
+import { useNavigate } from 'react-router-dom';
 
 const CartDropdown = () => {
   const { cartItems, clearAllItemsFromCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const handleClearAll = () => clearAllItemsFromCart();
 
@@ -15,7 +17,12 @@ const CartDropdown = () => {
           <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </ul>
-      <Button>Check Out</Button>
+      <Button
+        onClick={() => {
+          navigate('/checkout');
+        }}>
+        Check Out
+      </Button>
       <span
         className='block text-center mt-4 underline text-slate-400 cursor-pointer'
         onClick={handleClearAll}>

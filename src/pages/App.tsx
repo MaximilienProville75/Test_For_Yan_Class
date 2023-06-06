@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 // import CssBaseline from "@mui/material/CssBaseline";
 import Home from "./Home/Home";
 import Product from "./Product/Product";
+import Checkout from './Checkout/Checkout';
 
 // Use the API : https://fakestoreapi.com , if not accessible use the data json file in the public folder
 
@@ -40,6 +41,7 @@ function App() {
         //     <CssBaseline />
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/product/:id" element={<Product />} />
         </Routes>
         // </ThemeProvider>
